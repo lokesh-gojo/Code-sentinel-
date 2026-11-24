@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: code-reviewer-backend
+    env: docker
+    dockerfilePath: backend/Dockerfile
+    plan: starter
+    region: oregon
+    envVars:
+      - key: PORT
+        value: 8000
+      - key: ENVIRONMENT
+        value: production
+      - key: CORS_ORIGINS
+        value: "*"
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_KEY
+        sync: false
+      - key: SUPABASE_JWT_SECRET
+        sync: false
+      - key: E2B_API_KEY
+        sync: false
+      - key: GITHUB_TOKEN
+        sync: false
